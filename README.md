@@ -60,6 +60,8 @@ rag.ask("Summarize the key points.")
 rag.ask("Explain the concept mentioned in the documents.")
 ```
 
+<img width="718" height="853" alt="8236bb34-c994-49d7-9f3a-302a98289ba6" src="https://github.com/user-attachments/assets/6e34dd67-7ccc-40c0-ba9f-0cedec0d396d" />
+
 ## 📊 Workflow Diagram
 
 ```
@@ -407,4 +409,5 @@ This is a universal implementation of Self-RAG. Use it for any purpose.
 - Powered by Google Gemini
 
 **Ready to use! Add your PDF documents and start asking questions! 🚀**
+
 
