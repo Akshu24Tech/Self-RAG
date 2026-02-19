@@ -1,113 +1,47 @@
-# GATE Self-RAG: Intelligent Q&A System for GATE Exam Papers
+# Universal Self-RAG System
 
-A Self-Reflective Retrieval Augmented Generation (Self-RAG) system designed specifically for answering questions about GATE (Graduate Aptitude Test in Engineering) Discrete Mathematics and Algorithms exam papers.
-
-## 🎯 Powered by Your Choice
-
-Choose your AI provider:
-- **Google Gemini** (Recommended) - Free tier, 2x cheaper, faster
-- **OpenAI GPT** - Premium quality, established ecosystem
-
-See [GEMINI_VS_OPENAI.md](GEMINI_VS_OPENAI.md) for detailed comparison.
+A Self-Reflective Retrieval Augmented Generation (Self-RAG) system that works with **ANY PDF documents** using Google Gemini.
 
 ## 🎯 What is Self-RAG?
 
 Self-RAG is an advanced RAG system that:
-- **Decides** whether to retrieve documents or answer directly
-- **Filters** retrieved documents for relevance
-- **Verifies** that answers are supported by source material
-- **Revises** answers that lack proper grounding
-- **Rewrites** queries when retrieval fails
-- **Validates** answer usefulness before returning
+- ✅ **Decides** whether to retrieve documents or answer directly
+- ✅ **Filters** retrieved documents for relevance
+- ✅ **Verifies** that answers are supported by source material
+- ✅ **Revises** answers that lack proper grounding
+- ✅ **Rewrites** queries when retrieval fails
+- ✅ **Validates** answer usefulness before returning
 
-## 📁 Project Structure
+## 🚀 Quick Start (3 Steps)
 
-```
-.
-├── paper/
-│   ├── DA2024.pdf          # GATE DA 2024 exam paper
-│   └── DA2025.pdf          # GATE DA 2025 exam paper
-├── self-rag-main/
-│   ├── documents/          # Original company demo documents
-│   └── self_rag_step7.ipynb  # Original Self-RAG implementation
-├── gate_self_rag.ipynb     # ✨ NEW: GATE-adapted Self-RAG
-└── README.md               # This file
-```
+### Step 1: Get FREE Gemini API Key
 
-## 🚀 Features
+1. Go to: **https://makersuite.google.com/app/apikey**
+2. Sign in with your Google account
+3. Click "Create API Key"
+4. Copy your API key
 
-### 1. **Intelligent Retrieval Decision**
-   - Automatically determines if exam paper content is needed
-   - Handles both general CS theory and specific exam questions
+### Step 2: Setup
 
-### 2. **Document Relevance Filtering**
-   - Filters retrieved chunks for topic relevance
-   - Focuses on questions and examples that match the query
-
-### 3. **Answer Verification (IsSUP)**
-   - Verifies answers are grounded in exam paper content
-   - Provides evidence quotes from source material
-   - Triggers revision if claims are unsupported
-
-### 4. **Answer Revision Loop**
-   - Automatically revises answers to be more factual
-   - Grounds responses in actual exam content
-   - Limits revisions to prevent infinite loops
-
-### 5. **Usefulness Check (IsUSE)**
-   - Validates that answers actually address the question
-   - Triggers query rewriting if answer is off-topic
-
-### 6. **Query Rewriting**
-   - Optimizes search queries for better retrieval
-   - Adds relevant CS keywords and terms
-   - Preserves year references (2024, 2025)
-
-### 7. **Visual Workflow Graph**
-   - LangGraph visualization of the entire pipeline
-   - Shows decision points and flow paths
-
-## 📊 Workflow Diagram
-
-```
-START
-  ↓
-Decide Retrieval
-  ↓
-  ├─→ [No Retrieval] → Generate Direct → END
-  └─→ [Need Retrieval] → Retrieve Documents
-                            ↓
-                         Filter Relevant
-                            ↓
-                            ├─→ [No Relevant] → No Answer Found → END
-                            └─→ [Has Relevant] → Generate from Context
-                                                    ↓
-                                                 Verify Support (IsSUP)
-                                                    ↓
-                                                    ├─→ [Fully Supported] → Accept
-                                                    └─→ [Not Supported] → Revise
-                                                                            ↓
-                                                                         (Loop back to IsSUP)
-                                                    ↓
-                                                 Check Usefulness (IsUSE)
-                                                    ↓
-                                                    ├─→ [Useful] → END
-                                                    └─→ [Not Useful] → Rewrite Query
-                                                                         ↓
-                                                                      (Loop back to Retrieve)
-```
-
-## 🛠️ Setup
-
-### Prerequisites
 ```bash
-pip install langchain langchain-community langchain-openai langgraph faiss-cpu python-dotenv pydantic
+# Clone or download this folder
+cd universal-self-rag
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Create .env file
+echo "GOOGLE_API_KEY=your-api-key-here" > .env
 ```
 
-### Environment Variables
-Create a `.env` file:
-```
-OPENAI_API_KEY=your_api_key_here
+### Step 3: Add Your Documents
+
+```bash
+# Create documents folder
+mkdir documents
+
+# Add your PDF files
+# Copy any PDF files into the documents/ folder
 ```
 
 ## 💻 Usage
@@ -115,152 +49,340 @@ OPENAI_API_KEY=your_api_key_here
 ### Basic Usage
 
 ```python
-# Load the notebook
-jupyter notebook gate_self_rag.ipynb
+from self_rag import SelfRAG
 
-# Run all cells to initialize the system
+# Initialize with your documents
+rag = SelfRAG(documents_folder="documents")
 
-# Ask a question
-question = "Explain the Pumping Lemma for Regular Languages using an example from a 2024 exam paper."
-result = app.invoke({"question": question})
-print(result["answer"])
+# Ask questions
+rag.ask("What is the main topic of the documents?")
+rag.ask("Summarize the key points.")
+rag.ask("Explain the concept mentioned in the documents.")
 ```
 
-### Using the Helper Function
+### Verbose Mode
 
 ```python
-# Simple query
-ask_gate_question("What graph algorithms appeared in the 2025 GATE DA paper?")
+# Show detailed metadata
+rag.ask("Your question here", verbose=True)
+```
 
-# Verbose mode with metadata
-ask_gate_question(
-    "Explain time complexity analysis with examples from recent papers.",
-    verbose=True
+Output:
+```
+================================================================================
+Q: Your question here
+--------------------------------------------------------------------------------
+A: The detailed answer based on your documents...
+--------------------------------------------------------------------------------
+METADATA:
+  Retrieval: True
+  Support: fully_supported
+  Useful: useful
+  Evidence: ['quote 1', 'quote 2', 'quote 3']
+================================================================================
+```
+
+### Custom Configuration
+
+```python
+# Customize chunk size and overlap
+rag = SelfRAG(
+    documents_folder="my_docs",
+    chunk_size=1000,      # Larger chunks for longer content
+    chunk_overlap=250     # More overlap for better context
 )
 ```
 
-## 📝 Example Questions
+## 📁 Project Structure
 
-1. **Concept with Exam Example**
-   ```
-   "Explain the Pumping Lemma for Regular Languages using an example from a 2024 exam paper."
-   ```
-
-2. **Topic Search**
-   ```
-   "What graph algorithms appeared in the 2025 GATE DA paper?"
-   ```
-
-3. **Concept Explanation**
-   ```
-   "Explain time complexity analysis with examples from recent papers."
-   ```
-
-4. **Specific Problem**
-   ```
-   "Show me a dynamic programming problem from GATE 2024 and explain the solution."
-   ```
-
-5. **Comparison**
-   ```
-   "Compare the difficulty of automata theory questions between 2024 and 2025 papers."
-   ```
-
-## 🎓 Key Differences from Original
-
-| Aspect | Original (Company Demo) | GATE Version |
-|--------|------------------------|--------------|
-| **Documents** | Company policies, pricing | GATE exam papers |
-| **Chunk Size** | 600 chars | 800 chars (longer questions) |
-| **Retrieval Count** | 4 chunks | 5 chunks |
-| **Prompts** | Business-focused | Educational/academic |
-| **Answer Style** | Factual quotes only | Educational with examples |
-| **Max Retries** | 10 | 3 (faster iteration) |
-| **Rewrite Tries** | 3 | 2 (quicker fallback) |
-
-## 🔧 Customization
-
-### Adjust Chunk Size
-```python
-chunks = RecursiveCharacterTextSplitter(
-    chunk_size=1000,  # Increase for longer questions
-    chunk_overlap=250
-).split_documents(docs)
+```
+universal-self-rag/
+├── self_rag.py           # Main Self-RAG implementation
+├── requirements.txt      # Python dependencies
+├── .env.example         # Environment template
+├── .env                 # Your API key (create this)
+├── README.md            # This file
+└── documents/           # Put your PDF files here
+    ├── document1.pdf
+    ├── document2.pdf
+    └── ...
 ```
 
-### Change Retrieval Count
+## 🎓 Use Cases
+
+### Academic Research
 ```python
-retriever = vector_store.as_retriever(
-    search_kwargs={"k": 7}  # Retrieve more chunks
-)
+# Add research papers to documents/
+rag = SelfRAG(documents_folder="documents")
+rag.ask("What are the main findings of the research?")
+rag.ask("Compare the methodologies used.")
 ```
 
-### Modify Retry Limits
+### Business Documents
 ```python
-MAX_RETRIES = 5  # More revision attempts
-MAX_REWRITE_TRIES = 3  # More query rewrites
+# Add company policies, reports, etc.
+rag = SelfRAG(documents_folder="documents")
+rag.ask("What is the refund policy?")
+rag.ask("Summarize Q4 financial results.")
 ```
 
-## 📈 Performance Tips
+### Legal Documents
+```python
+# Add contracts, agreements, etc.
+rag = SelfRAG(documents_folder="documents")
+rag.ask("What are the termination clauses?")
+rag.ask("Explain the liability terms.")
+```
 
-1. **Add More Papers**: Include more years for better coverage
-2. **Tune Chunk Size**: Larger chunks for complex problems
-3. **Adjust Temperature**: Set to 0 for consistent answers
-4. **Use Better Embeddings**: Try `text-embedding-3-large` for accuracy
+### Educational Content
+```python
+# Add textbooks, lecture notes, etc.
+rag = SelfRAG(documents_folder="documents")
+rag.ask("Explain the concept of X.")
+rag.ask("What are the key formulas?")
+```
+
+## 🔧 How It Works
+
+### Self-RAG Workflow
+
+```
+Question
+   ↓
+1. Decide Retrieval → Need documents?
+   ↓
+2. Retrieve → Get relevant chunks
+   ↓
+3. Filter Relevance → Keep only relevant docs
+   ↓
+4. Generate Answer → Create response
+   ↓
+5. Verify Support (IsSUP) → Is answer grounded?
+   ↓
+6. Revise (if needed) → Fix unsupported claims
+   ↓
+7. Check Usefulness (IsUSE) → Does it answer the question?
+   ↓
+8. Rewrite Query (if needed) → Try better search
+   ↓
+Final Answer
+```
+
+### Key Features
+
+**1. Intelligent Retrieval Decision**
+- Automatically determines if documents are needed
+- Handles both general knowledge and document-specific questions
+
+**2. Document Relevance Filtering**
+- Filters retrieved chunks for topic relevance
+- Focuses on content that matches the query
+
+**3. Answer Verification (IsSUP)**
+- Verifies answers are grounded in source material
+- Provides evidence quotes
+- Triggers revision if unsupported
+
+**4. Answer Revision Loop**
+- Automatically revises answers to be more factual
+- Grounds responses in actual document content
+- Limits revisions to prevent infinite loops (max 3)
+
+**5. Usefulness Check (IsUSE)**
+- Validates that answers actually address the question
+- Triggers query rewriting if answer is off-topic
+
+**6. Query Rewriting**
+- Optimizes search queries for better retrieval
+- Adds relevant keywords
+- Removes filler words
+
+## 🎯 Why Gemini?
+
+| Feature | Gemini 1.5 Flash | Benefit |
+|---------|------------------|---------|
+| **Free Tier** | 15 requests/min | Perfect for testing & learning |
+| **Speed** | Very Fast | Quick responses |
+| **Cost** | $0.075/1M tokens | 2x cheaper than GPT-4o-mini |
+| **Context** | 1M tokens | Handle many documents |
+| **Quality** | Excellent | High-quality answers |
+
+## 📊 Parameters
+
+### Chunk Size
+- **Default**: 800 characters
+- **Small (400-600)**: For short, precise content
+- **Medium (800-1000)**: For general documents
+- **Large (1200-1500)**: For long-form content
+
+### Chunk Overlap
+- **Default**: 200 characters
+- **Low (100-150)**: Less redundancy
+- **Medium (200-250)**: Balanced
+- **High (300-400)**: Better context preservation
+
+### Retrieval Count (k)
+- **Default**: 5 chunks
+- **Few (3-4)**: Precise answers
+- **Medium (5-7)**: Comprehensive answers
+- **Many (8-10)**: Research/exploration
 
 ## 🐛 Troubleshooting
 
-### "No relevant content found"
-- Try rephrasing your question
-- Add year references (2024, 2025)
-- Use specific CS terminology
-
-### Slow Performance
-- Reduce `k` in retriever (fewer chunks)
-- Use smaller embedding model
-- Decrease MAX_RETRIES
-
-### Inaccurate Answers
-- Check if papers contain relevant content
-- Increase chunk overlap
-- Adjust relevance filtering prompts
-
-## 📚 Adding More Papers
-
-```python
-docs = (
-    PyPDFLoader("../paper/DA2024.pdf").load()
-    + PyPDFLoader("../paper/DA2025.pdf").load()
-    + PyPDFLoader("../paper/DA2023.pdf").load()  # Add more
-    + PyPDFLoader("../paper/DA2022.pdf").load()
-)
+### Error: "GOOGLE_API_KEY not found"
+**Solution**: Create `.env` file with your API key:
+```bash
+GOOGLE_API_KEY=your-actual-key-here
 ```
 
-## 🤝 Contributing
+### Error: "No PDF files found"
+**Solution**: Add PDF files to the `documents/` folder:
+```bash
+mkdir documents
+# Copy your PDF files into documents/
+```
 
-To adapt this for other exam types:
-1. Replace PDF files with your exam papers
-2. Update prompts to match your domain
-3. Adjust chunk size based on question length
-4. Modify retrieval count as needed
+### Error: "No module named 'langchain_google_genai'"
+**Solution**: Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-## 📄 License
+### Slow Performance
+**Solution**: Reduce retrieval count:
+```python
+# Edit self_rag.py, line with search_kwargs
+retriever = vector_store.as_retriever(search_kwargs={"k": 3})
+```
 
-This project adapts the Self-RAG pattern for educational purposes.
+### "No relevant content found"
+**Solutions**:
+1. Rephrase your question with more specific terms
+2. Check if your documents actually contain relevant information
+3. Try increasing retrieval count (k=7 or k=10)
+
+### Rate Limit Exceeded
+**Solution**: Gemini free tier allows 15 requests/minute. Wait a minute or upgrade to paid tier.
+
+## 🔒 Privacy & Security
+
+- ✅ Your documents are processed locally
+- ✅ Only embeddings and queries are sent to Gemini API
+- ✅ Google doesn't train on your data (by default)
+- ✅ API key is stored in `.env` (not committed to git)
+
+## 📈 Performance Tips
+
+1. **Optimize Chunk Size**: Match your document type
+2. **Adjust Retrieval Count**: More chunks = more context but slower
+3. **Use Specific Questions**: Better questions = better answers
+4. **Organize Documents**: Group related documents together
+
+## 🎓 Examples
+
+### Example 1: Research Papers
+```python
+from self_rag import SelfRAG
+
+rag = SelfRAG(documents_folder="research_papers")
+
+# Ask about methodology
+rag.ask("What methodology was used in the study?")
+
+# Compare findings
+rag.ask("Compare the results across different papers.")
+
+# Get specific details
+rag.ask("What were the limitations mentioned?", verbose=True)
+```
+
+### Example 2: Company Documents
+```python
+from self_rag import SelfRAG
+
+rag = SelfRAG(documents_folder="company_docs")
+
+# Policy questions
+rag.ask("What is the vacation policy?")
+
+# Financial questions
+rag.ask("What was the revenue growth in Q3?")
+
+# Product questions
+rag.ask("What are the key features of Product X?")
+```
+
+### Example 3: Educational Content
+```python
+from self_rag import SelfRAG
+
+rag = SelfRAG(documents_folder="textbooks")
+
+# Concept explanation
+rag.ask("Explain the concept of recursion with examples.")
+
+# Problem solving
+rag.ask("How do I solve this type of problem?")
+
+# Summary
+rag.ask("Summarize Chapter 5.", verbose=True)
+```
+
+## 🚀 Advanced Usage
+
+### Multiple Document Sets
+
+```python
+# Different RAG instances for different document sets
+research_rag = SelfRAG(documents_folder="research")
+business_rag = SelfRAG(documents_folder="business")
+legal_rag = SelfRAG(documents_folder="legal")
+
+# Ask domain-specific questions
+research_rag.ask("What are the findings?")
+business_rag.ask("What is the policy?")
+legal_rag.ask("What are the terms?")
+```
+
+### Batch Processing
+
+```python
+from self_rag import SelfRAG
+
+rag = SelfRAG(documents_folder="documents")
+
+questions = [
+    "What is the main topic?",
+    "Who are the key stakeholders?",
+    "What are the recommendations?",
+]
+
+for q in questions:
+    rag.ask(q)
+```
+
+### Custom Prompts
+
+Edit `self_rag.py` to customize prompts for your specific use case. Look for `ChatPromptTemplate.from_messages()` calls.
+
+## 📝 License
+
+This is a universal implementation of Self-RAG. Use it for any purpose.
 
 ## 🙏 Acknowledgments
 
-- Based on the Self-RAG paper and implementation
+- Based on the Self-RAG paper and methodology
 - Uses LangChain and LangGraph frameworks
-- Powered by OpenAI embeddings and GPT models
+- Powered by Google Gemini
 
 ## 📞 Support
 
-For questions or issues:
-1. Check the troubleshooting section
-2. Review example questions
-3. Adjust parameters based on your needs
+For issues:
+1. Check the Troubleshooting section
+2. Verify your API key is set correctly
+3. Ensure PDF files are in the documents/ folder
+4. Check that dependencies are installed
 
 ---
 
-**Happy Learning! 🎓**
+**Ready to use! Add your PDF documents and start asking questions! 🚀**
