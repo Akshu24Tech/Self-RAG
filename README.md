@@ -60,6 +60,37 @@ rag.ask("Summarize the key points.")
 rag.ask("Explain the concept mentioned in the documents.")
 ```
 
+## 📊 Workflow Diagram
+
+```
+START
+  ↓
+Decide Retrieval
+  ↓
+  ├─→ [No Retrieval] → Generate Direct → END
+  └─→ [Need Retrieval] → Retrieve Documents
+                            ↓
+                         Filter Relevant
+                            ↓
+                            ├─→ [No Relevant] → No Answer Found → END
+                            └─→ [Has Relevant] → Generate from Context
+                                                    ↓
+                                                 Verify Support (IsSUP)
+                                                    ↓
+                                                    ├─→ [Fully Supported] → Accept
+                                                    └─→ [Not Supported] → Revise
+                                                                            ↓
+                                                                         (Loop back to IsSUP)
+                                                    ↓
+                                                 Check Usefulness (IsUSE)
+                                                    ↓
+                                                    ├─→ [Useful] → END
+                                                    └─→ [Not Useful] → Rewrite Query
+                                                                         ↓
+                                                                      (Loop back to Retrieve)
+```
+
+
 ### Verbose Mode
 
 ```python
@@ -375,14 +406,5 @@ This is a universal implementation of Self-RAG. Use it for any purpose.
 - Uses LangChain and LangGraph frameworks
 - Powered by Google Gemini
 
-## 📞 Support
-
-For issues:
-1. Check the Troubleshooting section
-2. Verify your API key is set correctly
-3. Ensure PDF files are in the documents/ folder
-4. Check that dependencies are installed
-
----
-
 **Ready to use! Add your PDF documents and start asking questions! 🚀**
+
