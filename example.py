@@ -1,7 +1,3 @@
-"""
-Example usage of Universal Self-RAG System
-"""
-
 from self_rag import SelfRAG
 
 def main():
