@@ -1,0 +1,888 @@
+{
+  "test_timestamp": "2026-07-10T18:49:32",
+  "test_queries": [
+    "What is quantum computing?",
+    "How do qubits differ from classical bits?",
+    "What is quantum superposition?",
+    "Explain quantum entanglement.",
+    "What are the applications of quantum computing?",
+    "What is a quantum gate?",
+    "How does quantum error correction work?",
+    "What is the current state of quantum computing hardware?",
+    "What is 2 + 2?",
+    "Who wrote Romeo and Juliet?"
+  ],
+  "concurrency_levels": [
+    {
+      "concurrency": 1,
+      "total_wall_time_s": 1.66,
+      "latency_stats": {
+        "min": 1.66,
+        "avg": 1.66,
+        "p95": 1.66,
+        "max": 1.66
+      },
+      "throughput_qps": 0.6,
+      "issup_distribution": {
+        "fully_supported": 0,
+        "partially_supported": 0,
+        "no_support": 0,
+        "N/A": 1
+      },
+      "retry_stats": {
+        "queries_with_retries": 0,
+        "queries_with_rewrites": 0,
+        "total_retries": 0,
+        "total_rewrites": 0,
+        "avg_latency_with_retries": 0,
+        "avg_latency_without_retries": 1.66
+      },
+      "success_count": 1,
+      "failure_count": 0,
+      "individual_results": [
+        {
+          "query": "What is quantum computing?",
+          "latency_s": 1.658,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "concurrency": 5,
+      "total_wall_time_s": 2.16,
+      "latency_stats": {
+        "min": 1.5,
+        "avg": 1.74,
+        "p95": 2.12,
+        "max": 2.12
+      },
+      "throughput_qps": 2.31,
+      "issup_distribution": {
+        "fully_supported": 0,
+        "partially_supported": 0,
+        "no_support": 0,
+        "N/A": 5
+      },
+      "retry_stats": {
+        "queries_with_retries": 0,
+        "queries_with_rewrites": 0,
+        "total_retries": 0,
+        "total_rewrites": 0,
+        "avg_latency_with_retries": 0,
+        "avg_latency_without_retries": 1.74
+      },
+      "success_count": 5,
+      "failure_count": 0,
+      "individual_results": [
+        {
+          "query": "How do qubits differ from classical bits?",
+          "latency_s": 1.536,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "What is quantum computing?",
+          "latency_s": 1.7,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "Explain quantum entanglement.",
+          "latency_s": 1.503,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "What is quantum superposition?",
+          "latency_s": 2.117,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "What are the applications of quantum computing?",
+          "latency_s": 1.865,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "concurrency": 10,
+      "total_wall_time_s": 2.65,
+      "latency_stats": {
+        "min": 0.66,
+        "avg": 1.85,
+        "p95": 2.62,
+        "max": 2.62
+      },
+      "throughput_qps": 3.77,
+      "issup_distribution": {
+        "fully_supported": 0,
+        "partially_supported": 0,
+        "no_support": 0,
+        "N/A": 10
+      },
+      "retry_stats": {
+        "queries_with_retries": 0,
+        "queries_with_rewrites": 0,
+        "total_retries": 0,
+        "total_rewrites": 0,
+        "avg_latency_with_retries": 0,
+        "avg_latency_without_retries": 1.85
+      },
+      "success_count": 10,
+      "failure_count": 0,
+      "individual_results": [
+        {
+          "query": "What is 2 + 2?",
+          "latency_s": 0.664,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "Who wrote Romeo and Juliet?",
+          "latency_s": 0.786,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "How do qubits differ from classical bits?",
+          "latency_s": 1.741,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "What is quantum computing?",
+          "latency_s": 1.856,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "Explain quantum entanglement.",
+          "latency_s": 1.922,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "What is quantum superposition?",
+          "latency_s": 2.156,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "What is a quantum gate?",
+          "latency_s": 2.147,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "What are the applications of quantum computing?",
+          "latency_s": 2.211,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "What is the current state of quantum computing hardware?",
+          "latency_s": 2.346,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "How does quantum error correction work?",
+          "latency_s": 2.623,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "concurrency": 20,
+      "total_wall_time_s": 6.32,
+      "latency_stats": {
+        "min": 1.25,
+        "avg": 3.63,
+        "p95": 5.84,
+        "max": 5.84
+      },
+      "throughput_qps": 0.47,
+      "issup_distribution": {
+        "fully_supported": 0,
+        "partially_supported": 0,
+        "no_support": 0,
+        "N/A": 3
+      },
+      "retry_stats": {
+        "queries_with_retries": 0,
+        "queries_with_rewrites": 0,
+        "total_retries": 0,
+        "total_rewrites": 0,
+        "avg_latency_with_retries": 0,
+        "avg_latency_without_retries": 3.63
+      },
+      "success_count": 3,
+      "failure_count": 17,
+      "individual_results": [
+        {
+          "query": "How do qubits differ from classical bits?",
+          "latency_s": 1.247,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "What is the current state of quantum computing hardware?",
+          "latency_s": 3.81,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "Explain quantum entanglement.",
+          "latency_s": 4.713,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is quantum computing?",
+          "latency_s": 4.729,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "Who wrote Romeo and Juliet?",
+          "latency_s": 5.259,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What are the applications of quantum computing?",
+          "latency_s": 5.277,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is 2 + 2?",
+          "latency_s": 5.237,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is quantum computing?",
+          "latency_s": 5.837,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "What is a quantum gate?",
+          "latency_s": 6.266,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is quantum superposition?",
+          "latency_s": 6.244,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "Explain quantum entanglement.",
+          "latency_s": 6.241,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "How does quantum error correction work?",
+          "latency_s": 6.274,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "How does quantum error correction work?",
+          "latency_s": 6.235,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "Who wrote Romeo and Juliet?",
+          "latency_s": 6.226,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is a quantum gate?",
+          "latency_s": 6.252,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is the current state of quantum computing hardware?",
+          "latency_s": 6.245,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "How do qubits differ from classical bits?",
+          "latency_s": 6.28,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is quantum superposition?",
+          "latency_s": 6.313,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What are the applications of quantum computing?",
+          "latency_s": 6.266,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is 2 + 2?",
+          "latency_s": 6.288,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        }
+      ]
+    },
+    {
+      "concurrency": 30,
+      "total_wall_time_s": 10.09,
+      "latency_stats": {
+        "min": 7.09,
+        "avg": 8.59,
+        "p95": 10.09,
+        "max": 10.09
+      },
+      "throughput_qps": 0.2,
+      "issup_distribution": {
+        "fully_supported": 0,
+        "partially_supported": 0,
+        "no_support": 0,
+        "N/A": 2
+      },
+      "retry_stats": {
+        "queries_with_retries": 0,
+        "queries_with_rewrites": 0,
+        "total_retries": 0,
+        "total_rewrites": 0,
+        "avg_latency_with_retries": 0,
+        "avg_latency_without_retries": 8.59
+      },
+      "success_count": 2,
+      "failure_count": 28,
+      "individual_results": [
+        {
+          "query": "What is 2 + 2?",
+          "latency_s": 4.292,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is the current state of quantum computing hardware?",
+          "latency_s": 4.325,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is quantum superposition?",
+          "latency_s": 4.313,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What are the applications of quantum computing?",
+          "latency_s": 4.317,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is quantum computing?",
+          "latency_s": 4.348,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is a quantum gate?",
+          "latency_s": 4.32,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is quantum computing?",
+          "latency_s": 4.347,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "Explain quantum entanglement.",
+          "latency_s": 4.303,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "How do qubits differ from classical bits?",
+          "latency_s": 4.371,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "How does quantum error correction work?",
+          "latency_s": 4.433,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "Explain quantum entanglement.",
+          "latency_s": 4.388,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "Who wrote Romeo and Juliet?",
+          "latency_s": 4.427,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is the current state of quantum computing hardware?",
+          "latency_s": 4.374,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What are the applications of quantum computing?",
+          "latency_s": 4.396,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What are the applications of quantum computing?",
+          "latency_s": 4.509,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "Who wrote Romeo and Juliet?",
+          "latency_s": 4.485,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "How does quantum error correction work?",
+          "latency_s": 4.44,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is 2 + 2?",
+          "latency_s": 4.424,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is a quantum gate?",
+          "latency_s": 4.447,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "Who wrote Romeo and Juliet?",
+          "latency_s": 4.442,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "How does quantum error correction work?",
+          "latency_s": 4.637,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is quantum superposition?",
+          "latency_s": 4.628,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "How do qubits differ from classical bits?",
+          "latency_s": 4.675,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "Explain quantum entanglement.",
+          "latency_s": 4.743,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is a quantum gate?",
+          "latency_s": 4.74,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "How do qubits differ from classical bits?",
+          "latency_s": 4.753,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is quantum superposition?",
+          "latency_s": 4.768,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is 2 + 2?",
+          "latency_s": 7.09,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        },
+        {
+          "query": "What is the current state of quantum computing hardware?",
+          "latency_s": 9.335,
+          "success": false,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": null,
+          "isuse": null,
+          "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kjwpkbv6e69rstypr5drd7wf` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "query": "What is quantum computing?",
+          "latency_s": 10.09,
+          "success": true,
+          "issup": null,
+          "retries": 0,
+          "rewrite_tries": 0,
+          "need_retrieval": false,
+          "isuse": null,
+          "error": null
+        }
+      ]
+    }
+  ]
+}

@@ -101,7 +101,7 @@ class SelfRAG:
         
         # Create vector store
         print("🔄 Creating vector store with Gemini embeddings...")
-        embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+        embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
         vector_store = FAISS.from_documents(chunks, embeddings)
         retriever = vector_store.as_retriever(search_kwargs={"k": 5})
         
