@@ -231,6 +231,26 @@ Final Answer
 - **Medium (5-7)**: Comprehensive answers
 - **Many (8-10)**: Research/exploration
 
+## ⚡ Concurrent Load Testing
+
+A concurrent load-testing tool is included to stress-test the Self-RAG pipeline under concurrent requests and analyze latency degradation, grounding accuracy, and backpressure.
+
+### Running the Load Test
+
+1. **Get a Groq API Key**: Since concurrent testing easily saturates Gemini's free tier limits, the test suite supports swapping to a faster, high-limit LLM like Groq (`llama-3.3-70b-versatile`). Get a key from [console.groq.com](https://console.groq.com).
+2. **Configure your `.env`**:
+   ```bash
+   GROQ_API_KEY=gsk_your_key_here
+   ```
+3. **Run the test script**:
+   ```bash
+   python load_test.py
+   ```
+
+The script will test escalating concurrency levels: `1 → 5 → 10 → 20 → 30` simultaneous queries, output a performance metrics table, and save raw data to `load_test_results.json`.
+
+Detailed findings, metrics, and bottleneck analysis are documented in the **[Load Test Report](docs/load_test_report.md)**.
+
 ## 🐛 Troubleshooting
 
 ### Error: "GOOGLE_API_KEY not found"
